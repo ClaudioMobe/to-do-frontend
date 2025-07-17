@@ -10,7 +10,7 @@ import {
   TaskList
 } from "../styles/TasksStyles";
 
-const Tasks = () => {
+const Tasks = ({setToken}) => {
   const [tasks, setTasks] = useState([]);
   const axios = useAxios();
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const Tasks = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    setToken(null);
     navigate("/login");
   };
 

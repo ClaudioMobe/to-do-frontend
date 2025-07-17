@@ -11,7 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigate to={token ? "/tasks" : "/login"} />} />
         <Route path="/login" element={token ? <Navigate to="/tasks" /> : <Auth setToken={setToken} />} />
-        <Route path="/tasks" element={token ? <Tasks /> : <Navigate to="/login" />} />
+        <Route path="/tasks" element={token ? <Tasks setToken={setToken} /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );
